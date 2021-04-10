@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- title -->
+    <title>calculator</title>
+    <script>
+        var bowl = 0
+
+        function pressNumber(Num) {
+            var currentNum = Num.value
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="titleCal">ماشین حساب</div>
+        <div class="calculator">
+            <div class="result">
+                <div id="resultCal">
+                    <h3>2032566</h3>
+                </div>
+            </div>
+            <div class="operator">
+                <input type="button" value="×" onclick="operatorCal();">
+                <input type="button" value="÷" onclick="operatorCal();">
+                <input type="button" value="+" onclick="operatorCal(this);">
+                <input type="button" value="-" onclick="operatorCal();">
+                <input type="button" value="=" onclick="eval();">
+            </div>
+            <div class="reset">
+                <input type="button" value="◀" onclick="resetCal();">
+                <input type="button" value="CE" onclick="resetCal();">
+                <input type="button" value="%" onclick="resetCal();">
+            </div>
+            <div class="numbers">
+                <input type="button" value="1" onclick="pressNumber(this);">
+                <input type="button" value="2" onclick="pressNumber(this);">
+                <input type="button" value="3" onclick="pressNumber(this);">
+                <input type="button" value="4" onclick="pressNumber(this);">
+                <input type="button" value="5" onclick="pressNumber(this);">
+                <input type="button" value="6" onclick="pressNumber(this);">
+                <input type="button" value="7" onclick="pressNumber(this);">
+                <input type="button" value="8" onclick="pressNumber(this);">
+                <input type="button" value="9" onclick="pressNumber(this);">
+                <input type="button" value="+/-" onclick="negative();">
+                <input type="button" value="0" onclick="pressNumber(this);">
+                <input type="button" value="." onclick="dot();">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
