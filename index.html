@@ -7,15 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style -->
     <link rel="stylesheet" href="style.css">
+    <!-- js -->
+    <script src="js/scrp.js"></script>
     <!-- title -->
     <title>calculator</title>
-    <script>
-        var bowl = 0
 
-        function pressNumber(Num) {
-            var currentNum = Num.value
-        }
-    </script>
 </head>
 
 <body>
@@ -23,35 +19,36 @@
         <div class="titleCal">ماشین حساب</div>
         <div class="calculator">
             <div class="result">
-                <div id="resultCal">
-                    <h3>2032566</h3>
-                </div>
+
+                <h6 id="memory"></h6>
+                <h3 id="res">0</h3>
+
             </div>
             <div class="operator">
-                <input type="button" value="×" onclick="operatorCal();">
-                <input type="button" value="÷" onclick="operatorCal();">
-                <input type="button" value="+" onclick="operatorCal(this);">
-                <input type="button" value="-" onclick="operatorCal();">
-                <input type="button" value="=" onclick="eval();">
+                <input type="button" value="×" onclick="calculator(this);">
+                <input type="button" value="÷" onclick="calculator(this);">
+                <input type="button" value="+" onclick="calculator(this);">
+                <input type="button" value="-" onclick="calculator(this);">
+                <input type="button" value="=" onclick="equal(this);">
             </div>
             <div class="reset">
-                <input type="button" value="◀" onclick="resetCal();">
-                <input type="button" value="CE" onclick="resetCal();">
-                <input type="button" value="%" onclick="resetCal();">
+                <input type="button" value="◀" onclick="calculator(this);">
+                <input type="button" value="CE" onclick="resetCal(this);">
+                <input type="button" value="%" onclick="calculator(this);">
             </div>
             <div class="numbers">
-                <input type="button" value="1" onclick="pressNumber(this);">
-                <input type="button" value="2" onclick="pressNumber(this);">
-                <input type="button" value="3" onclick="pressNumber(this);">
-                <input type="button" value="4" onclick="pressNumber(this);">
-                <input type="button" value="5" onclick="pressNumber(this);">
-                <input type="button" value="6" onclick="pressNumber(this);">
-                <input type="button" value="7" onclick="pressNumber(this);">
-                <input type="button" value="8" onclick="pressNumber(this);">
-                <input type="button" value="9" onclick="pressNumber(this);">
-                <input type="button" value="+/-" onclick="negative();">
-                <input type="button" value="0" onclick="pressNumber(this);">
-                <input type="button" value="." onclick="dot();">
+                <input type="button" value="1" onclick="calculator(this);" id="num1">
+                <input type="button" value="2" onclick="calculator(this);">
+                <input type="button" value="3" onclick="calculator(this);">
+                <input type="button" value="4" onclick="calculator(this);">
+                <input type="button" value="5" onclick="calculator(this);">
+                <input type="button" value="6" onclick="calculator(this);">
+                <input type="button" value="7" onclick="calculator(this);">
+                <input type="button" value="8" onclick="calculator(this);">
+                <input type="button" value="9" onclick="calculator(this);">
+                <input type="button" value="+/-" onclick="calculator(this);">
+                <input type="button" value="0" onclick="calculator(this);">
+                <input type="button" value="." onclick="calculator(this);">
             </div>
         </div>
     </div>
