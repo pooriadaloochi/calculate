@@ -1,19 +1,33 @@
+:focus {
+    outline: none;
+}
+
+
+/* start */
+
+body {
+    background: #C0392B;
+}
+
 .main {
     width: 100%;
     height: 100%;
 }
 
 .titleCal {
-    margin: 50px 680px 0 0;
+    margin: 50px 690px 0 0;
     direction: rtl;
-    font-size: 50px;
+    font-size: 45px;
+    color: #fdfdfd;
 }
 
 .calculator {
     width: 400px;
     height: 550px;
-    background: #333;
+    background: #fdfdfd;
     margin: 60px auto;
+    border: 17px solid #500511;
+    border-radius: 20px;
 }
 
 .result {
@@ -24,23 +38,22 @@
 }
 
 .result #memory {
-    float: right;
+    float: left;
     width: 100%;
     height: 30px;
     font-size: 20px;
-    color: #fdfdfd;
-    margin: 17px 0 0 20px;
+    color: #ee0e33;
+    margin: 27px 0 0 30px;
 }
 
 .result #res {
-    width: 100%;
+    width: 90%;
     height: 50px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin: 15px 0 10px 20px;
-    color: #fdfdfd;
+    margin: 5px 0 20px 10px;
+    color: #ee0e33;
     font-size: 40px;
-    float: right;
+    float: left;
+    border-bottom: 1px solid rgb(88, 88, 88);
 }
 
 .numbers {
@@ -52,11 +65,21 @@
 }
 
 .numbers input {
-    width: 87px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     font-size: 40px;
-    margin-left: 5px;
-    margin-top: 5px;
+    margin-left: 15px;
+    margin-top: 10px;
+    border-radius: 40px;
+}
+
+.numbers input:focus {
+    border: 5px solid #ee0e33;
+    color: #ee0e33;
+}
+
+.numbers input:focus {
+    outline: none
 }
 
 .operator {
@@ -67,24 +90,55 @@
 }
 
 .operator input {
-    width: 87px;
-    height: 80px;
-    font-size: 40px;
-    margin-right: 25px;
-    margin-top: 5px;
+    width: 70px;
+    height: 70px;
+    font-size: 35px;
+    margin-right: 35px;
+    margin-top: 10px;
+    border-radius: 40px;
+    background: #ee0e33;
+    color: #fdfdfd;
+}
+
+.operator input:focus {
+    background: #fdfdfd;
+    color: #ee0e33;
+    border: 2px solid #ee0e33;
+}
+
+.operator input:first-child {
+    margin-top: 15px;
 }
 
 .reset {
     width: 75%;
     height: 80px;
     float: right;
-    margin: 3px 0 0 5px;
 }
 
 .reset input {
-    width: 87px;
-    height: 80px;
-    font-size: 40px;
-    margin-left: 5px;
-    margin-top: 5px;
+    width: 70px;
+    height: 70px;
+    font-size: 30px;
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 40px;
+    background: #202b36;
+    color: #fdfdfd;
+}
+
+.reset input:focus {
+    background: #fdfdfd;
+    color: #202b36;
+    border: 2px solid #202b36;
+}
+
+.reset input:last-child {
+    background: #ee0e33;
+}
+
+.reset input:last-child:focus {
+    background: #fdfdfd;
+    color: #ee0e33;
+    border: 2px solid #ee0e33;
 }
