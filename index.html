@@ -11,7 +11,187 @@
     <script src="js/scrp.js"></script>
     <!-- title -->
     <title>calculator</title>
+    <script>
+        var sum = 0
+        var act = 0
+        var cnt = 0
+        var a = 0
 
+        function calculator(Num) {
+            var temp = document.getElementById('res').innerHTML
+            bowl = Num.value
+
+            if (bowl == 1 || bowl == 2 || bowl == 3 || bowl == 4 || bowl == 5 || bowl == 6 || bowl == 7 || bowl == 8 || bowl == 9 || bowl == 0) {
+                if (a == 0) {
+                    temp = bowl
+                    document.getElementById('res').innerHTML = temp
+                    a++
+                } else {
+                    temp += bowl
+                    document.getElementById('res').innerHTML = temp
+                }
+                if (act == "+") {
+                    temp = eval(temp)
+                    sum = eval(sum)
+                    sum = sum + temp
+
+                } else if (act == "-") {
+                    temp = eval(temp)
+                    sum = eval(sum)
+                    sum = sum - temp
+
+                } else if (act == "×") {
+                    temp = eval(temp)
+                    sum = eval(sum)
+                    sum = sum * temp
+
+                } else if (act == "÷") {
+                    temp = eval(temp)
+                    sum = eval(sum)
+                    sum = sum / temp
+
+                } else if (act == "%") {
+                    temp = eval(temp)
+                    sum = eval(sum)
+                    sum = sum % temp
+                }
+
+
+            } else if (bowl == "+") {
+                if (sum == 0) {
+                    document.getElementById('memory').innerHTML = temp + "+"
+                    document.getElementById('res').innerHTML = temp
+                    temp = eval(temp)
+                    sum = eval(sum)
+                    sum = sum + temp
+                    act = "+"
+                    a = 0
+                } else if (cnt) {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + "+"
+                    document.getElementById('res').innerHTML = temp
+                    act = "+"
+                    cnt = 0
+                    a = 0
+                } else {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + temp + "+"
+                    document.getElementById('res').innerHTML = temp
+                    act = "+"
+                    a = 0
+                }
+
+            } else if (bowl == "×") {
+                if (sum == 0) {
+                    document.getElementById('memory').innerHTML = temp + "×"
+                    document.getElementById('res').innerHTML = temp
+                    sum = temp
+                    act = "×"
+                    a = 0
+                } else if (cnt) {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + "×"
+                    document.getElementById('res').innerHTML = temp
+                    act = "×"
+                    cnt = 0
+                    a = 0
+                } else {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + temp + "×"
+                    document.getElementById('res').innerHTML = temp
+                    act = "×"
+                    a = 0
+                }
+            } else if (bowl == "-") {
+                if (sum == 0) {
+                    document.getElementById('memory').innerHTML = temp + "-"
+                    document.getElementById('res').innerHTML = temp
+                    sum = temp
+                    act = "-"
+                    a = 0
+                } else if (cnt) {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + "-"
+                    document.getElementById('res').innerHTML = temp
+                    act = "-"
+                    cnt = 0
+                    a = 0
+                } else {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + temp + "-"
+                    document.getElementById('res').innerHTML = temp
+                    act = "-"
+                    a = 0
+                }
+            } else if (bowl == "÷") {
+                if (sum == 0) {
+                    document.getElementById('memory').innerHTML = temp + "÷"
+                    document.getElementById('res').innerHTML = temp
+                    sum = temp
+                    act = "÷"
+                    a = 0
+                } else if (cnt) {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + "÷"
+                    document.getElementById('res').innerHTML = temp
+                    act = "÷"
+                    cnt = 0
+                    a = 0
+                } else {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + temp + "÷"
+                    document.getElementById('res').innerHTML = temp
+                    act = "÷"
+                    a = 0
+                }
+            } else if (bowl == "%") {
+                if (sum == 0) {
+                    document.getElementById('memory').innerHTML = temp + "%"
+                    document.getElementById('res').innerHTML = temp
+                    sum = temp
+                    act = "%"
+                    a = 0
+                } else if (cnt) {
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + "%"
+                    document.getElementById('res').innerHTML = temp
+                    act = "%"
+                    cnt = 0
+                    a = 0
+                } else {
+                    temp = eval(temp)
+                    sum = eval(sum)
+                    sum = sum % temp
+                    document.getElementById('memory').innerHTML = document.getElementById('memory').innerHTML + temp + "%"
+                    document.getElementById('res').innerHTML = temp
+                    act = "%"
+                    a = 0
+                }
+            } else if (bowl == "=") {
+                document.getElementById('memory').innerHTML = sum
+                document.getElementById('res').innerHTML = sum
+                temp = 0
+                cnt++
+                a = 0
+
+            } else if (bowl == "CE") {
+                document.getElementById('memory').innerHTML = ""
+                document.getElementById('res').innerHTML = 0
+                temp = 0
+                sum = 0
+                act = 0
+                cnt = 0
+                a = 0
+
+            } else if (bowl == "◀") {
+                temp = Number(temp)
+                var b = temp % 10
+                temp -= b
+                temp /= 10
+                document.getElementById('res').innerHTML = temp
+                if (temp == 0)
+                    a = 0
+
+            } else if (bowl == "+/-") {
+                temp = Number(temp) * (-1)
+
+                document.getElementById('res').innerHTML = temp
+
+            }
+
+        }
+    </script>
 </head>
 
 <body>
@@ -29,11 +209,11 @@
                 <input type="button" value="÷" onclick="calculator(this);">
                 <input type="button" value="+" onclick="calculator(this);">
                 <input type="button" value="-" onclick="calculator(this);">
-                <input type="button" value="=" onclick="equal(this);">
+                <input type="button" value="=" onclick="calculator(this);">
             </div>
             <div class="reset">
                 <input type="button" value="◀" onclick="calculator(this);">
-                <input type="button" value="CE" onclick="resetCal(this);">
+                <input type="button" value="CE" onclick="calculator(this);">
                 <input type="button" value="%" onclick="calculator(this);">
             </div>
             <div class="numbers">
